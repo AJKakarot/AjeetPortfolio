@@ -1,107 +1,50 @@
-import { getBlogPosts, getPost } from "@/data/blog";
-import { DATA } from "@/data/resume";
-import { formatDate } from "@/lib/utils";
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import BlurFade from "@/components/magicui/blur-fade";
+import { getBlogPosts } from "@/data/blog";
+import Link from "next/link";
 
-export async function generateStaticParams() {
+export const metadata = {
+  title: "Blog",
+  description: "My thoughts on software development, life, and more.",
+};
+
+const BLUR_FADE_DELAY = 0.04;
+
+export default async function BlogPage() {
   const posts = await getBlogPosts();
-  return posts.map((post) => ({ slug: post.slug }));
-}
 
-export async function generateMetadata({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}): Promise<Metadata | undefined> {
-  let post = await getPost(params.slug);
-
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      publishedTime,
-      url: `${DATA.url}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
-}
-
-export default async function Blog({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}) {
-  let post = await getPost(params.slug);
-
-  if (!post) {
-    notFound();
-  }
+  // Sort posts by publishedAt descending
+  const sortedPosts = posts
+    .filter(post => post.metadata && post.slug) // safety check
+    .sort(
+      (a, b) =>
+        new Date(b.metadata.publishedAt).getTime() -
+        new Date(a.metadata.publishedAt).getTime()
+    );
 
   return (
-    <section id="blog">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
-            description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${DATA.url}${post.metadata.image}`
-              : `${DATA.url}/og?title=${post.metadata.title}`,
-            url: `${DATA.url}/blog/${post.slug}`,
-            author: {
-              "@type": "Person",
-              name: DATA.name,
-            },
-          }),
-        }}
-      />
-      <h1 className="title font-medium text-2xl tracking-tighter max-w-[650px]">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
-        <Suspense fallback={<p className="h-5" />}>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </Suspense>
-      </div>
-      <article
-        className="prose dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: post.source }}
-      ></article>
+    <section>
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
+      </BlurFade>
+
+      {sortedPosts.map((post, id) => (
+        <BlurFade
+          delay={BLUR_FADE_DELAY * 2 + id * 0.05}
+          key={post.slug}
+        >
+          <Link
+            className="flex flex-col space-y-1 mb-4"
+            href={`/blog/${post.slug}`}
+          >
+            <div className="w-full flex flex-col">
+              <p className="tracking-tight">{post.metadata.title}</p>
+              <p className="h-6 text-xs text-muted-foreground">
+                {post.metadata.publishedAt}
+              </p>
+            </div>
+          </Link>
+        </BlurFade>
+      ))}
     </section>
   );
 }
