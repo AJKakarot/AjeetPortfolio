@@ -1,47 +1,98 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# 🌐 Ajeet Gupta – Developer Portfolio
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+A modern, high-performance personal portfolio built with **Next.js** and **TypeScript**, showcasing projects, achievements, and technical skills.  
+Designed for developers who want to present their work in a professional and interactive way.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+---
 
-# Features
+## ✨ Features
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+- ⚡ **Blazing Fast** with Next.js 15 App Router  
+- 🧠 **TypeScript Ready** with full type safety  
+- 🎨 **Responsive Design** using Tailwind CSS and shadcn/ui  
+- 💡 **SEO Optimized** pages with Next Metadata API  
+- 💬 Integrated **Contact Form** using Formspree / EmailJS  
+- 📸 Image optimization with built-in Next.js Image component  
+- 🚀 Deployed automatically on **Vercel (CI/CD)**  
+- 🌙 Light/Dark theme support  
 
-# Getting Started Locally
+---
 
-1. Clone this repository to your local machine:
+## 🏗️ Project Structure
 
-   ```bash
-   git clone https://github.com/dillionverma/portfolio
-   ```
+portfolio/
+├── public/          # Static assets (images, icons)
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── about/page.tsx
+│   │   ├── projects/page.tsx
+│   │   └── contact/page.tsx
+│   ├── components/
+│   ├── data/
+│   ├── lib/
+│   ├── styles/
+│   ├── types/
+│   └── hooks/
+├── package.json
+├── next.config.js
+├── tsconfig.json
+└── tailwind.config.js
 
-2. Move to the cloned directory
 
-   ```bash
-   cd portfolio
-   ```
+---
 
-3. Install dependencies:
+## 🧰 Tech Stack
 
-   ```bash
-   pnpm install
-   ```
+- **Framework:** [Next.js 15](https://nextjs.org/)  
+- **Language:** [TypeScript](https://www.typescriptlang.org/)  
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)  
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)  
+- **Deployment:** [Vercel](https://vercel.com)  
+- **Version Control:** Git + GitHub Actions (CI/CD)  
+- **Linting:** ESLint + Prettier  
 
-4. Start the local Server:
+---
 
-   ```bash
-   pnpm dev
-   ```
+## ⚙️ Installation & Setup
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+### 1️⃣ Clone this repository
+```bash
+git clone https://github.com/AJKakarot/portfolio.git
+cd portfolio
+npm install
+# or
+pnpm install
 
-# License
+```
+🧑‍💻 Author
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+Ajeet Gupta
+Full Stack Developer | Specializing in Next.js, TypeScript, and AI-integrated applications
+
+🏆 LeetCode & Coding Achievements
+
+LeetCode Profile: zippy-raindrop-9b9455
+Rank: 500,801
+Languages Solved:
+Java: 139 problems
+C++: 125 problems
+JavaScript: 1 problem
+
+Skills:
+Advanced: Dynamic Programming x42, Backtracking x7, Divide and Conquer x7
+Intermediate: Hash Table x66, Greedy x29, Depth-First Search x27
+Fundamental: Array x131, String x67, Sorting x46
+
+Stats:
+255/3721 solved
+75.83% Acceptance
+Beats 88.29% in Easy, 89.66% in Medium, 84.74% in Hard
+Badges: 4 (50 Days 2024, 100 Days 2024, Apr LeetCoding Challenge, Most Recent 100 Days Badge 2024)
+
+🪪 License
+
+Distributed under the MIT License.
+You’re free to modify and use this project for personal or commercial purposes.
+
