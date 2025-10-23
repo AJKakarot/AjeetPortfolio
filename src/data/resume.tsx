@@ -57,11 +57,12 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+919876543210",
+    email: "gajeet031@gmail.com",
+    tel: "+918840713812",
     social: {
-      GitHub: { name: "GitHub", url: "https://github.com/ajeetgupta", icon: Icons.github, navbar: true },
-      LinkedIn: { name: "LinkedIn", url: "https://linkedin.com/in/ajeetgupta", icon: Icons.linkedin, navbar: true },
+      GitHub: { name: "GitHub", url: "https://github.com/AJKakarot", icon: Icons.github, navbar: true },
+      LinkedIn: { name: "LinkedIn", url: "https://www.linkedin.com/in/ajeet-gupta-99aa6b281/", icon: Icons.linkedin, navbar: true },
+      medium: { name: "Medium", url: "https://medium.com/@2301661530002", icon: Icons.medium, navbar: false },
       X: { name: "X", url: "https://x.com/butter69168", icon: Icons.x, navbar: true },
       
     },
