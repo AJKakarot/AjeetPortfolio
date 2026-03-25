@@ -127,7 +127,7 @@ education: [
  projects: [
   {
     title: "CashTrackr",
-    href: "https://cash-trackr-3mhg-fcaa3gew1-ajeets-projects-0160f38e.vercel.app",
+    href: "https://cash-trackr-rllkic01y-ajeets-projects-0160f38e.vercel.app/",
     dates: "Aug 2025",
     active: true,
     description: "Developed an intelligent finance dashboard that provides **real-time budget tracking** and AI-powered insights. Built using **Next.js 15**, **React**, and **TailwindCSS** with backend APIs in **Node.js**, **Express.js**, and **Prisma** connected to **MongoDB**. Deployed on **Vercel** for optimal performance, scalability, and SEO.",
@@ -145,7 +145,7 @@ education: [
     ],
     links: [
       { type: "GitHub", url: "https://github.com/AJKakarot/CashTrackr" },
-      { type: "Live Demo", url: "https://cash-trackr-3mhg-fcaa3gew1-ajeets-projects-0160f38e.vercel.app" }
+      { type: "Live Demo", url: "https://cash-trackr-rllkic01y-ajeets-projects-0160f38e.vercel.app/" }
     ],
     image: "",
     video: "/cashtrack.mov",
