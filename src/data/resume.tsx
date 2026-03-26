@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Full Stack Developer with expertise in React, Node.js, C++, and Data Structures & Algorithms — focused on PERFORMANCE, SCALABILITY, and CLEAN CODE.",
   summary: "**Full Stack MERN Developer** specializing in building SCALABLE, Production-Grade SaaS and web applications. Experienced in C++, **NodeJS**, Express, and **cloud-native DevOps solutions**. Strong foundation in **problem-solving** and **software architecture**. Built and deployed **10+ production projects** and actively contributed to high-impact engineering challenges. **DSA solved: 500+ questions**, **LeetCode top 10%**. Passionate about **continuous learning** and **cutting-edge technologies**. Currently exploring **cloud computing**, **Kubernetes**, and **microservices architecture** to enhance application scalability and reliability. Dedicated to writing clean, maintainable code and following best practices in software development.",
-  avatarUrl: "/me.png",
+  avatarUrl: "/photo.jpg",
  skills: [
   // Frontend
  ,"Next.js",
